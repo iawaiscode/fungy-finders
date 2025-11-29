@@ -1,0 +1,179 @@
+@layer reset, base, utilities;
+
+@layer reset {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+  }
+
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  figure,
+  blockquote,
+  dl,
+  dd {
+    margin: 0;
+  }
+
+  [role="list"] {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    min-block-size: 100vh;
+    line-height: 1.6;
+  }
+
+  h1,
+  h2,
+  h3,
+  button,
+  input,
+  label {
+    line-height: 1.1;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: balance;
+  }
+
+  p,
+  li {
+    text-wrap: pretty;
+  }
+
+  img,
+  picture {
+    max-inline-size: 100%;
+    display: block;
+  }
+
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+  }
+}
+
+@layer base {
+  :root {
+    --color-white: hsl(0, 0%, 100%);
+    --color-gray-100: hsl(0, 2%, 79%);
+    --color-brand-400: hsl(25, 88%, 75%);
+    --color-brand-500: hsl(25, 88%, 66%);
+    --color-green-400: hsl(143, 19%, 49%);
+    --color-green-500: hsl(143, 38%, 37%);
+    --color-green-600: hsl(145, 29%, 19%);
+    --color-brown-500: hsl(10, 5%, 25%);
+    --color-brown-600: hsl(9, 7%, 21%);
+    --color-brown-700: hsl(9, 8%, 16%);
+    --color-brown-800: hsl(0, 6%, 15%);
+    --color-brown-900: hsl(0, 6%, 13%);
+
+    --color-orange-500: hsl(28, 43%, 28%);
+    --color-red-500: hsl(359, 34%, 24%);
+    --color-teal-500: hsl(186, 42%, 25%);
+
+    --font-family-heading: "Outfit", sans-serif;
+    --font-family-body: "Fira Sans", sans-serif;
+
+    --font-size-300: 0.875rem;
+    --font-size-400: 1rem;
+    --font-size-500: 1.125rem;
+    --font-size-600: 1.25rem;
+    --font-size-700: 1.5rem;
+    --font-size-800: 2rem;
+    --font-size-900: 3.75rem;
+    --font-size-1000: 3.75rem;
+
+    @media (width > 760px) {
+      --font-size-500: 1.25rem;
+      --font-size-600: 1.5rem;
+      --font-size-700: 2rem;
+      --font-size-800: 3rem;
+      --font-size-900: 5rem;
+      --font-size-1000: 7.5rem;
+    }
+
+    --text-main: var(--color-gray-100);
+    --text-high-contrast: var(--color-white);
+    --text-brand: var(--color-brand-500);
+    --text-brand-light: var(--color-brand-400);
+
+    --background-accent-light: var(--color-green-400);
+    --background-accent-main: var(--color-green-500);
+    --background-accent-dark: var(--color-green-600);
+
+    --background-extra-light: var(--color-brown-500);
+    --background-light: var(--color-brown-600);
+    --background-main: var(--color-brown-700);
+    --background-dark: var(--color-brown-800);
+    --background-extra-dark: var(--color-brown-900);
+
+    --font-size-heading-sm: var(--font-size-700);
+    --font-size-heading-regular: var(--font-size-800);
+    --font-size-heading-lg: var(--font-size-900);
+    --font-size-heading-xl: var(--font-size-1000);
+
+    --font-size-sm: var(--font-size-300);
+    --font-size-regular: var(--font-size-400);
+    --font-size-md: var(--font-size-500);
+    --font-size-lg: var(--font-size-600);
+
+    --border-radius-sm: 0.25rem;
+    --border-radius-md: 0.5rem;
+    --border-radius-lg: 0.75rem;
+  }
+  body {
+    font-family: var(--font-family-body);
+    font-size: var(--font-size-regular);
+    line-height: 1.6;
+    color: var(--text-main);
+    background-color: var(--background-main);
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-family-heading);
+    font-weight: 700;
+    color: var(--text-high-contrast);
+  }
+
+  a {
+    color: var(--text-high-contrast);
+  }
+  a:hover,
+  a:focus-visible {
+    color: var(--text-brand-light);
+  }
+}
+
+@layer utilities {
+  .visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+}
