@@ -1,5 +1,5 @@
 const navToggle = document.querySelector(
-  '[aria-controls="primary-navigation"]',
+  '[aria-controls="primary-navigation"]'
 );
 const primaryNav = document.querySelector("#primary-navigation");
 
@@ -8,9 +8,7 @@ navToggle.addEventListener("click", function toggleMenu() {
 
   if (isOpened === "false") {
     navToggle.setAttribute("aria-expanded", "true");
-    // primaryNav.classList.remove("visually-hidden");
   } else {
     navToggle.setAttribute("aria-expanded", "false");
-    // primaryNav.classList.add("visually-hidden");
   }
 });

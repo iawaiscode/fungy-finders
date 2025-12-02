@@ -1,5 +1,9 @@
 @layer reset, base, layout, components, utilities;
 
+@view-transition {
+  navigation: auto;
+}
+
 @layer reset {
   *,
   *::before,
@@ -194,10 +198,10 @@
     gap: 1rem;
   }
 
-  .grid-auto-fit {
+  .grid-auto-fill {
     display: grid;
     gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
   }
 
   .equal-columns {
@@ -512,6 +516,11 @@
     white-space: nowrap;
     width: 1px;
   }
+
+  [hidden] {
+    display: none;
+  }
+
   .text-center {
     text-align: center;
   }
