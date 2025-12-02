@@ -298,6 +298,13 @@
     }
     @media (width < 760px) {
       display: none;
+      opacity: 0;
+      transition:
+        opacity 1s,
+        display 1s;
+      transition-behavior: allow-discreate;
+      translate: 0 -100%;
+
       background-color: var(--background-accent-main);
       padding: 2rem;
       position: absolute;
@@ -321,6 +328,11 @@
 
       [aria-expanded="true"] ~ & {
         display: block;
+        opacity: 1;
+        translate: 0 0;
+        @starting-style {
+          opacity: 0;
+        }
       }
     }
   }
